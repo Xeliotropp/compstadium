@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Cart')
+@section('title', 'Количка')
 
 @section('content')
 
-    <div>
-       <livewire:frontend.cart.cart-show />
-    </div>
+<div>
+    <livewire:frontend.cart.cart-show />
+</div>
 
 @endsection

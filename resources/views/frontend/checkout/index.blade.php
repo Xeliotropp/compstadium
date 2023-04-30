@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Checkout')
+@section('title', 'Плащане')
 
 @section('content')
 
-    <div>
-        <livewire:frontend.checkout.checkout-show />
-    </div>
+<div>
+    <livewire:frontend.checkout.checkout-show />
+</div>
 
 @endsection
