@@ -5,20 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                <div class="card-header">{{ __('Потвърдете вашият имейл адрес!') }}</div>
 
                 <div class="card-body">
                     @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ __('Нов линк бе изпратен за потвърждение на вашият имейл адрес.') }}
+                    </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+                    {{ __('Преди да продължите, моля проверете вашият имейл адрес за линк.') }}
+                    {{ __('Ако не сте получили имейл') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('натиснете тук за
+                            получаване на нов линк.') }}</button>.
                     </form>
                 </div>
             </div>
