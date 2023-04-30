@@ -107,10 +107,10 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 | Authentication routes
 |-------------------------------------------------------------------------- 
 */
-Route::get('http://compstadium.store/email/verify', function () {
+Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
-Route::get('http://compstadium.store/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
     return redirect('/home');
@@ -121,7 +121,7 @@ Route::get('http://compstadium.store/email/verify/{id}/{hash}', function (EmailV
 | Resending Authentication Email
 |--------------------------------------------------------------------------
  */
-Route::post('http://compstadium.store/email/verification-notification', function (Request $request) {
+Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
 
     return back()->with('message', 'Изпратен е линк за потвърждение!');
