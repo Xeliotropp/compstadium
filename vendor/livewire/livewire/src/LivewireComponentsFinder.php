@@ -30,11 +30,11 @@ class LivewireComponentsFinder
 
     public function getManifest()
     {
-        if (! is_null($this->manifest)) {
+        if (!is_null($this->manifest)) {
             return $this->manifest;
         }
 
-        if (! file_exists($this->manifestPath)) {
+        if (!file_exists($this->manifestPath)) {
             $this->build();
         }
 
@@ -55,29 +55,29 @@ class LivewireComponentsFinder
 
     protected function write(array $manifest)
     {
-        if (! is_writable(dirname($this->manifestPath))) {
-            throw new Exception('The '.dirname($this->manifestPath).' directory must be present and writable.');
-        }
+        //if (! is_writable(dirname($this->manifestPath))) {
+        //    throw new Exception('The '.dirname($this->manifestPath).' directory must be present and writable.');
+        //}
 
-        $this->files->put($this->manifestPath, '<?php return '.var_export($manifest, true).';', true);
+        $this->files->put($this->manifestPath, '<?php return ' . var_export($manifest, true) . ';', true);
     }
 
     public function getClassNames()
     {
-        if (! $this->files->exists($this->path)) {
+        if (!$this->files->exists($this->path)) {
             return collect();
         }
 
         return collect($this->files->allFiles($this->path))
             ->map(function (SplFileInfo $file) {
-                return app()->getNamespace().
+                return app()->getNamespace() .
                     str($file->getPathname())
-                        ->after(app_path().'/')
-                        ->replace(['/', '.php'], ['\\', ''])->__toString();
+                    ->after(app_path() . '/')
+                    ->replace(['/', '.php'], ['\\', ''])->__toString();
             })
             ->filter(function (string $class) {
                 return is_subclass_of($class, Component::class) &&
-                    ! (new ReflectionClass($class))->isAbstract();
+                    !(new ReflectionClass($class))->isAbstract();
             });
     }
 }

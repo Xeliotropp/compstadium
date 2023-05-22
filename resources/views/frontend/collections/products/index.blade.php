@@ -16,14 +16,14 @@
 
 <div class="py-3 py-md-3">
     <div class="container">
-        <div class="col-md-12 row">
+        <div class="col-md-12">
             <div class="text-center">
                 <form action="{{url('search')}}" role="search">
                     <div class="input-group mt-5">
-                        <input type="search" placeholder="Търсене..." class="form-control" name="search"
+                        <input type="search" placeholder="Търсене..." class="form-control border border-2" name="search"
                             value="{{Request::get('search')}}" style="height:60px;" />
-                        <button class="btn bg-white" type="submit">
-                            <i class="fa fa-search"></i>
+                        <button class="btn bg-white border border-2" type="submit">
+                            <i class="fa fa-search "></i>
                         </button>
                     </div>
                 </form>
