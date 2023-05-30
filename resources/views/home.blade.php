@@ -42,11 +42,8 @@
                                             </div>
                                         </div>
                                         @else
-                                        <div class="card mb-3">
-                                            <h2 class="card-header">Последна поръчка</h2>
-                                            <div class="card-body">
-                                                <p>Все още не се сте поръчали продукти</p>
-                                            </div>
+                                        <div class="mb-3">
+                                            <p>Все още не се сте поръчали продукти</p>
                                         </div>
                                         @endif
                                         @endif

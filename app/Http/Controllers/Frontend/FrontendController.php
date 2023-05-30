@@ -76,4 +76,9 @@ class FrontendController extends Controller
     {
         return view('frontend.thank-you');
     }
+    public function promotions()
+    {
+        $promoProducts = Product::whereNotNull('selling_price')->orderBy('ID', 'DESC')->paginate(10);
+        return view('frontend.promotions.index', compact('promoProducts'));
+    }
 }

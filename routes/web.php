@@ -30,6 +30,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/collections/{category_slug}', 'products');
     Route::get('/collections/{category_slug}/{product_slug}', 'productView');
     Route::get('/search', 'productSearch');
+    Route::get('/promotions', 'promotions');
 });
 
 Route::middleware(['auth'])->group(function () {

@@ -12,7 +12,14 @@
             @if ($sliderItem->image)
             <img src="{{ asset($sliderItem->image) }}" class="d-block w-100" alt="Slider">
             @endif
-
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{url('/promotions')}}" class="btn btn-secondary mb-14 btn-block"
+                        style="height: 100px; font-size:24px; color:white; display:flex; align-items:center; justify-content:center;">Вижте
+                        всички
+                        промоции</a>
+                </div>
+            </div>
         </div>
         @endforeach
     </div>
